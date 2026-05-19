@@ -40,9 +40,11 @@ const SearchBar = ({ onSearch }) => {
         </button>
         <button
           type="submit"
-          className="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors font-medium shadow-sm"
+          className="bg-indigo-600 text-white px-4 sm:px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors font-medium shadow-sm flex items-center justify-center"
+          title="Search"
         >
-          Search
+          <span className="hidden sm:inline">Search</span>
+          <Search size={20} className="sm:hidden" />
         </button>
       </div>
 

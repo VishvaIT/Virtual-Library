@@ -70,9 +70,9 @@ const UploadPage = () => {
       <Navbar />
       <div className="flex flex-1">
         <Sidebar />
-        <main className="flex-1 p-8 overflow-y-auto flex justify-center">
-          <div className="max-w-2xl w-full bg-white rounded-xl shadow-sm border p-8">
-            <div className="text-center mb-8">
+        <main className="flex-1 p-4 sm:p-8 pb-20 md:pb-8 overflow-y-auto flex justify-center">
+          <div className="max-w-2xl w-full bg-white rounded-xl shadow-sm border p-6 sm:p-8">
+            <div className="text-center mb-6 sm:mb-8">
               <div className="inline-flex items-center justify-center p-3 bg-indigo-100 rounded-full mb-4 text-indigo-600">
                 <UploadCloud size={32} />
               </div>

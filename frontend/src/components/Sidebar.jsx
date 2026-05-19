@@ -19,26 +19,51 @@ const Sidebar = () => {
   const links = user?.role === 'admin' ? adminLinks : studentLinks;
 
   return (
-    <aside className="w-64 bg-white border-r h-[calc(100vh-73px)] sticky top-[73px] flex flex-col p-4">
-      <div className="space-y-2">
+    <>
+      {/* Desktop Sidebar */}
+      <aside className="hidden md:flex w-64 bg-white border-r h-[calc(100vh-73px)] sticky top-[73px] flex-col p-4 z-40">
+        <div className="space-y-2">
+          {links.map((link) => (
+            <NavLink
+              key={link.path}
+              to={link.path}
+              end={link.path === '/admin'}
+              className={({ isActive }) =>
+                `flex items-center gap-3 px-4 py-3 rounded-lg transition-colors font-medium ${
+                  isActive 
+                    ? 'bg-indigo-50 text-indigo-700' 
+                    : 'text-gray-600 hover:bg-gray-50 hover:text-indigo-600'
+                }`
+              }
+            >
+              {link.icon}
+              {link.name}
+            </NavLink>
+          ))}
+        </div>
+      </aside>
+
+      {/* Mobile Bottom Navigation */}
+      <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t z-50 flex justify-around p-2 pb-safe shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
         {links.map((link) => (
           <NavLink
             key={link.path}
             to={link.path}
+            end={link.path === '/admin'}
             className={({ isActive }) =>
-              `flex items-center gap-3 px-4 py-3 rounded-lg transition-colors font-medium ${
+              `flex flex-col items-center justify-center gap-1 p-2 rounded-lg transition-colors flex-1 ${
                 isActive 
-                  ? 'bg-indigo-50 text-indigo-700' 
-                  : 'text-gray-600 hover:bg-gray-50 hover:text-indigo-600'
+                  ? 'text-indigo-600 bg-indigo-50/50' 
+                  : 'text-gray-500 hover:text-indigo-600 hover:bg-gray-50'
               }`
             }
           >
             {link.icon}
-            {link.name}
+            <span className="text-[10px] font-medium text-center">{link.name}</span>
           </NavLink>
         ))}
-      </div>
-    </aside>
+      </nav>
+    </>
   );
 };
 

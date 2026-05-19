@@ -32,8 +32,8 @@ const AdminDashboard = () => {
       <Navbar />
       <div className="flex flex-1">
         <Sidebar />
-        <main className="flex-1 p-8 overflow-y-auto">
-          <div className="mb-8">
+        <main className="flex-1 p-4 sm:p-8 pb-20 md:pb-8 overflow-y-auto">
+          <div className="mb-6 sm:mb-8">
             <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
               <Activity size={24} className="text-indigo-600" />
               Admin Dashboard
