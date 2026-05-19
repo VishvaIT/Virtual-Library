@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: 'https://virtual-library-hq39.onrender.com/api',
 });
 
 // Request interceptor to add the auth token to headers
