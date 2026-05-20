@@ -52,7 +52,7 @@ const ResourceCard = ({ resource, onDelete }) => {
             </button>
           )}
           <a
-            href={`http://localhost:5000${resource.fileUrl}`}
+            href={resource.fileUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 px-3 py-1.5 bg-indigo-50 text-indigo-600 rounded-lg hover:bg-indigo-100 transition-colors text-sm font-medium"
