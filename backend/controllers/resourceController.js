@@ -35,7 +35,7 @@ const uploadResource = async (req, res) => {
       academicYear,
       resourceType,
       description,
-      fileUrl: `/uploads/${req.file.filename}`,
+      fileUrl: `${req.protocol}://${req.get("host")}/uploads/${req.file.filename}`,
       uploadedBy: req.user._id,
     });
 
